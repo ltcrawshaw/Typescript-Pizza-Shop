@@ -1,19 +1,13 @@
 import React, {useContext} from 'react';
 import PizzaCSS from './Pizza.module.css';
 import { useStateDispatch } from './AppState'
-
-interface Pizza {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-}
+import { Pizza } from '../types'
 
 interface Props {
   pizza: Pizza;
 }
 
-const Pizza: React.FC<Props> = ({ pizza }) => {
+const PizzaItem: React.FC<Props> = ({ pizza }) => {
   const dispatch = useStateDispatch();
   const handleAddToCartClick = () => {
     dispatch({
@@ -33,4 +27,4 @@ const Pizza: React.FC<Props> = ({ pizza }) => {
   );
 };
 
-export default Pizza;
+export default PizzaItem;
